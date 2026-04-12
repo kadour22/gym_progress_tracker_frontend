@@ -1,7 +1,10 @@
 import React from 'react'
-import TitanLanding from './components/TitanLanding'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
+
+import TitanLanding from './components/landing/TitanLanding'
 import Navbar from './components/navbar/Navbar'
+import { LoginPage } from './components/auth/Login'
+import { RegisterPage } from './components/auth/Register'
 const App = () => {
   return (
     <div>
@@ -9,6 +12,8 @@ const App = () => {
       <Navbar/>
         <Routes>
           <Route path='/' element={<TitanLanding/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/register' element={<RegisterPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>
