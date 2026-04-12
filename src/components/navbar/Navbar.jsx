@@ -8,7 +8,7 @@ const links = [
   { name: "Plans", href: "#" },
   { name: "Contacts", href: "#" },
 ];
-
+ 
 const Navbar = () => {
   return (
     <div className='bg-[#0b0b0b] text-white'>
