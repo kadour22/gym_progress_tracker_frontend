@@ -85,5 +85,17 @@ const Profile = () => {
     </div>
   )
 }
-
+function StatCard({ title, value, icon }) {
+  return (
+    <div className="relative bg-[#1a1a1a] p-6 rounded-2xl overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center text-white/5 text-[100px] font-bold">
+        {icon}
+      </div>
+      <div className="relative z-10">
+        <p className="text-gray-400 text-sm">{title}</p>
+        <h2 className="text-3xl font-bold text-lime-400 mt-2">{value}</h2>
+      </div>
+    </div>
+  );
+}
 export default Profile
