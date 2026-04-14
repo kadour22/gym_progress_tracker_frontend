@@ -24,7 +24,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-4 items-center">
-          <button className="text-sm text-gray-300">Log in</button>
+          <button className="text-sm text-gray-300">
+            <Link to="/login">Login</Link>
+          </button>
           <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
             Try for free
           </button>
