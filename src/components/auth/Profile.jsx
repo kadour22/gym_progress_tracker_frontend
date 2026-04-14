@@ -98,4 +98,20 @@ function StatCard({ title, value, icon }) {
     </div>
   );
 }
+function ProgressBar({ label, value }) {
+  return (
+    <div className="mb-4">
+      <div className="flex justify-between text-sm mb-1">
+        <span className="text-gray-300">{label}</span>
+        <span className="text-gray-400">{value}%</span>
+      </div>
+      <div className="w-full bg-gray-800 h-2 rounded-full">
+        <div
+          className="bg-lime-400 h-2 rounded-full"
+          style={{ width: `${value}%` }}
+        />
+      </div>
+    </div>
+  );
+}
 export default Profile
