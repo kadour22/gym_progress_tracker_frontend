@@ -7,18 +7,21 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await UserAPI.login({ username, password });
-      localStorage.setItem('access_token', response.data.access);
-      localStorage.setItem('refresh_token', response.data.refresh);
-      navigate('/dashboard');
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
+    try {
+      const response = await UserAPI.login({ username, password })
+
+      localStorage.setItem('access_token', response.data.access)
+      localStorage.setItem('refresh_token', response.data.refresh)
+
+      navigate('/dashboard')
+
+    } catch (error) {
+      console.error('Login failed', error)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#0b0b0b] flex items-center justify-center px-4">
