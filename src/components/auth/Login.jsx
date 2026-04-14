@@ -31,7 +31,7 @@ export function LoginPage() {
         <form className="flex flex-col gap-4">
           <input type="text" placeholder="Username" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
           <input type="password" placeholder="Password" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
-          <button className="bg-lime-400 text-black py-3 rounded-full font-semibold mt-2" onClick={handleLogin}>Log in</button>
+          <button className="bg-lime-400 text-black py-3 rounded-full font-semibold mt-2" onClick={handleSubmit}>Log in</button>
         </form>
 
         <p className="text-gray-400 text-sm text-center mt-6">
