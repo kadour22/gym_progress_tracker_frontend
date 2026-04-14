@@ -3,14 +3,14 @@ import { Link,useNavigate } from 'react-router-dom';
 import { UserAPI } from '../../api/api';
 
 export function LoginPage() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await UserAPI.login({ email, password });
+      const response = await UserAPI.login({ username, password });
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
       navigate('/dashboard');
@@ -26,7 +26,7 @@ export function LoginPage() {
         <h1 className="text-2xl font-bold text-white mb-6 text-center">Welcome Back</h1>
 
         <form className="flex flex-col gap-4">
-          <input type="email" placeholder="Email" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
+          <input type="text" placeholder="Username" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
           <input type="password" placeholder="Password" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
           <button className="bg-lime-400 text-black py-3 rounded-full font-semibold mt-2" onClick={handleLogin}>Log in</button>
         </form>
