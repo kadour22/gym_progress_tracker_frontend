@@ -5,6 +5,7 @@ import TitanLanding from './components/landing/TitanLanding'
 import Navbar from './components/navbar/Navbar'
 import { LoginPage } from './components/auth/Login'
 import { RegisterPage } from './components/auth/Register'
+import Profile from './components/auth/Profile'
 const App = () => {
   return (
     <div>
