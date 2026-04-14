@@ -29,8 +29,18 @@ export function LoginPage() {
         <h1 className="text-2xl font-bold text-white mb-6 text-center">Welcome Back</h1>
 
         <form className="flex flex-col gap-4">
-          <input type="text" placeholder="Username" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
-          <input type="password" placeholder="Password" className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" />
+          <input
+          type="text"
+          placeholder="Username"
+          className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400"
+          onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+          type="password"
+          placeholder="Password"
+          className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-lime-400" 
+          onChange={(e) => setPassword(e.target.value)}
+          />
           <button className="bg-lime-400 text-black py-3 rounded-full font-semibold mt-2" onClick={handleSubmit}>Log in</button>
         </form>
 
