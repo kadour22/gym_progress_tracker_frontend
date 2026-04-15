@@ -22,4 +22,10 @@ export const UserAPI = {
     user_data: () => axiosInstance.get("users/user-data/"),
 }
 
+export const ProgramAPI = {
+    list_programs: () => axiosInstance.get("programs/program-data/"),
+    generate_ai_program: (data) => axiosInstance.post("programs/ai-generate-program/", data),
+    get_program: (program_id) => axiosInstance.get(`programs/program-data/program/${program_id}/`),
+
+}
 export default axiosInstance;
