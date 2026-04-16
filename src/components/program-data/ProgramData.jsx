@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UserAPI } from "../../api/api";
+import { ProgramAPI } from "../../api/api";
 
 const ProgramData = () => {
   const [programs, setPrograms] = useState([]);
@@ -8,7 +8,7 @@ const ProgramData = () => {
   useEffect(() => {
     const fetchPrograms = async () => {
       try {
-        const res = await UserAPI.program_data();
+        const res = await ProgramAPI.prgram_data();
         setPrograms(res.data);
       } catch (err) {
         console.error("Error fetching program data", err);
