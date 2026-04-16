@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar'
 import { LoginPage } from './components/auth/Login'
 import { RegisterPage } from './components/auth/Register'
 import Profile from './components/auth/Profile'
+import CreateProgram from './components/programs/CreateProgram'
 const App = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/register' element={<RegisterPage/>}/>
           <Route path='/dashboard' element={<Profile/>}/>
+          <Route path='/create-program' element={<CreateProgram/>}/>
         </Routes>
       </BrowserRouter>
     </div>
