@@ -12,7 +12,7 @@ const links = [
 const handle_logout = () => {
   localStorage.removeItem('access_token')
   localStorage.removeItem('refresh_token')
-  window.location.href = '/dashboard'
+  window.location.href = '/'
 }
 
 const Navbar = () => {
