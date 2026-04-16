@@ -8,6 +8,7 @@ import { RegisterPage } from './components/auth/Register'
 import Profile from './components/auth/Profile'
 import CreateProgram from './components/programs/CreateProgram'
 import ProgramData from './components/program-data/ProgramData'
+
 const App = () => {
   return (
     <div>

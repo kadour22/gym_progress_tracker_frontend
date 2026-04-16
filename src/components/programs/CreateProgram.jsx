@@ -2,31 +2,34 @@ import React, { useState } from "react";
 import { ProgramAPI } from "../../api/api";
 
 const CreateProgram = () => {
-  const [form, setForm] = useState({
-    age: "",
-    gender: "man",
-    progam_goal: "lossfat",
-    durations: "2 Month",
-    training: "3 day",
-    height: "",
-    weight: "",
-  });
+
+
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("man");
+  const [progam_goal, setProgam_goal] = useState("lossfat");
+  const [durations, setDurations] = useState("2 Month");
+  const [training, setTraining] = useState("3 day");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
 
   const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+  console.log(age)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await ProgramAPI.generate_ai_program(form);
+      await ProgramAPI.generate_ai_program(
+        {
+          age,
+          gender,
+          progam_goal,
+          durations,
+          training,
+          height,
+          weight
+        }
+      );
       console.log("Program created");
     } catch (err) {
       console.error("Error:", err);
@@ -48,13 +51,13 @@ const CreateProgram = () => {
             type="number"
             name="age"
             placeholder="Age"
-            onChange={handleChange}
+            onChange={(e) => setAge(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none"
           />
 
           <select
             name="gender"
-            onChange={handleChange}
+            onChange={(e) => setGender(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg"
           >
             <option value="man">Man</option>
@@ -63,7 +66,7 @@ const CreateProgram = () => {
 
           <select
             name="progam_goal"
-            onChange={handleChange}
+            onChange={(e) => setProgam_goal(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg"
           >
             <option value="lossfat">Loss Fat</option>
@@ -73,7 +76,7 @@ const CreateProgram = () => {
 
           <select
             name="durations"
-            onChange={handleChange}
+            onChange={(e) => setDurations(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg"
           >
             <option>1 Month</option>
@@ -85,7 +88,7 @@ const CreateProgram = () => {
 
           <select
             name="training"
-            onChange={handleChange}
+            onChange={(e) => setTraining(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg"
           >
             <option>1 day</option>
@@ -99,7 +102,7 @@ const CreateProgram = () => {
             type="text"
             name="height"
             placeholder="Height (cm)"
-            onChange={handleChange}
+            onChange={(e) => setHeight(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none"
           />
 
@@ -107,7 +110,7 @@ const CreateProgram = () => {
             type="number"
             name="weight"
             placeholder="Weight (kg)"
-            onChange={handleChange}
+            onChange={(e) => setWeight(e.target.value)}
             className="bg-[#1a1a1a] text-white px-4 py-3 rounded-lg outline-none"
           />
 
