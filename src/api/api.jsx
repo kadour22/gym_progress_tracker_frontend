@@ -26,6 +26,7 @@ export const ProgramAPI = {
     list_programs: () => axiosInstance.get("programs/program-data/"),
     generate_ai_program: (data) => axiosInstance.post("programs/ai-generate-program/", data),
     get_program: (program_id) => axiosInstance.get(`programs/program-data/program/${program_id}/`),
+    prgram_data: () => axiosInstance.get("programs/program-data/"),
 
 }
 export default axiosInstance;
