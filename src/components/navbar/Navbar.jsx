@@ -9,7 +9,11 @@ const links = [
   { name: "Contacts", href: "#" },
 ];
  
-
+const handle_logout = () => {
+  localStorage.removeItem('access_token')
+  localStorage.removeItem('refresh_token')
+  window.location.href = '/dashboard'
+}
 
 const Navbar = () => {
   return (
@@ -29,8 +33,8 @@ const Navbar = () => {
           <button className="text-sm text-gray-300">
            { localStorage.getItem('access_token') ? <Link to="/dashboard">Dashboard</Link> : <Link to="/login">Login</Link>}
           </button>
-          <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
-            Try for free
+          <button onClick={handle_logout} className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
+            Logout
           </button>
         </div>
       </nav>
