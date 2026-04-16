@@ -9,6 +9,8 @@ const links = [
   { name: "Contacts", href: "#" },
 ];
  
+
+
 const Navbar = () => {
   return (
     <div className='bg-[#0b0b0b] text-white'>
@@ -25,7 +27,7 @@ const Navbar = () => {
 
         <div className="flex gap-4 items-center">
           <button className="text-sm text-gray-300">
-            <Link to="/login">Login</Link>
+           { localStorage.getItem('access_token') ? <Link to="/dashboard">Dashboard</Link> : <Link to="/login">Login</Link>}
           </button>
           <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
             Try for free
