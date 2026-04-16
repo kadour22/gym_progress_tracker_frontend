@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { UserAPI } from '../../api/api';
+import { Link } from 'react-router-dom';
 const Profile = () => {
   const [userData, setUserData] = useState(null);
 
@@ -26,9 +27,9 @@ const Profile = () => {
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-gray-400 text-sm">Track your fitness progress</p>
         </div>
-        <button className="bg-lime-400 text-black px-5 py-2 rounded-full font-semibold">
+        <Link to="/create-program" className="bg-lime-400 text-black px-5 py-2 rounded-full font-semibold">
           + New Program
-        </button>
+        </Link>
       </div>
 
       {/* Stats */}

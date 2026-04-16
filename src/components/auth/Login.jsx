@@ -7,6 +7,13 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const user = localStorage.getItem('access_token')
+    if (user) {
+      navigate('/dashboard')
+    }
+  },[])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
