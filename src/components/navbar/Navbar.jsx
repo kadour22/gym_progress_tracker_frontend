@@ -33,9 +33,7 @@ const Navbar = () => {
           <button className="text-sm text-gray-300">
            { localStorage.getItem('access_token') ? <Link to="/dashboard">Dashboard</Link> : <Link to="/login">Login</Link>}
           </button>
-          <button onClick={handle_logout} className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
-            Logout
-          </button>
+          { localStorage.getItem('access_token') && <button className="text-sm text-gray-300" onClick={handle_logout}>Logout</button> }
         </div>
       </nav>
     </div>
